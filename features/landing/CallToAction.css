@@ -1,0 +1,59 @@
+/* src/features/landing/CallToAction.css */
+.cta-section {
+  text-align: center;
+  padding: 4rem 1rem;
+  background-color: #fff;
+}
+
+.cta-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0d3d6a;
+  margin-bottom: 1rem;
+}
+
+.cta-title span {
+  color: #0d3d6a;
+}
+
+.cta-subtext {
+  font-size: 1rem;
+  color: #222;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border: none;
+}
+
+.cta-button.primary {
+  background-color: #0d3d6a;
+  color: #fff;
+}
+
+.cta-button.primary:hover {
+  background-color: #092b4a;
+}
+
+.cta-button.secondary {
+  background: none;
+  color: #0d3d6a;
+}
+
+.cta-button.secondary .arrow {
+  margin-left: 0.5rem;
+}

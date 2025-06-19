@@ -5,6 +5,7 @@ import EventsSection from "../features/landing/EventsSection";
 import 'keen-slider/keen-slider.min.css';
 import PartnersSection from "../features/landing/PartnersSection";
 import OfferPrograms from "../features/landing/OfferPrograms";
+import CallToAction from "../features/landing/CallToAction";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <EventsSection />
       <PartnersSection />
       <OfferPrograms />
+      <CallToAction />
       <p>This is the Programs Section</p>
       <p>This is the Testimonials Section</p>
       <p>This is the Call to Action Section</p>

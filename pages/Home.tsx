@@ -9,6 +9,12 @@ import CallToAction from "../features/landing/CallToAction";
 import StepsOverview from "../features/landing/StepsOverview";
 import BlogHighlights from "../features/landing/BlogHighlights";
 import ProgramsSection from "../features/landing/ProgramsSection";
+import AboutUsSection from "../features/landing/AboutUsSection";
+import ValuesSection from "../features/landing/ValuesSection";
+import SuccessStoriesSection from "../features/landing/SuccessStoriesSection";
+import WhySoulSection from "../features/landing/WhySoulSection";
+import FAQsSection from "../features/landing/FAQsSection";
+import GetInTouchSection from "../features/landing/GetInTouchSection";
 
 const Home = () => {
   return (
@@ -22,9 +28,13 @@ const Home = () => {
       <StepsOverview />
       <BlogHighlights />
       <ProgramsSection />
-      <p>This is the Programs Section</p>
-      <p>This is the Testimonials Section</p>
-      <p>This is the Call to Action Section</p>
+      <AboutUsSection />
+      <ValuesSection />
+      <SuccessStoriesSection />
+      <WhySoulSection />
+      <FAQsSection />
+      <GetInTouchSection/>
+      
     </MainLayout>
   );
 };

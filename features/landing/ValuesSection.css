@@ -1,0 +1,119 @@
+/* src/features/landing/ValuesSection.css */
+
+.values-section {
+  padding: 4rem 1rem;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.values-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0a3161;
+  margin-bottom: 2.5rem;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 1.25rem;
+  position: relative;
+  z-index: 2;
+}
+
+.value-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 16px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #1b1b1b;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.value-card h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #0a3161;
+}
+
+/* Grid Placement */
+.value-0 { grid-column: 1; grid-row: 1; z-index: 3; }
+.value-1 { grid-column: 2; grid-row: 1; z-index: 3; }
+.value-2 { grid-column: 3; grid-row: 1; z-index: 3; }
+.value-3 { grid-column: 4; grid-row: 1; z-index: 3; }
+.value-4 { grid-column: 1 / span 2; grid-row: 2; z-index: 4; position: relative; }
+.value-5 { grid-column: 3 / span 2; grid-row: 2; z-index: 4; position: relative; }
+
+/* Background */
+.values-bg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120%;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Overlay images */
+.values-vr {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 11%;
+  width: 140px;
+  border-radius: 16px;
+  z-index: 3;
+}
+
+.values-earth {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 6%;
+  width: 140px;
+  border-radius: 16px;
+  z-index: 3;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .value-0, .value-1, .value-2, .value-3,
+  .value-4, .value-5 {
+    grid-column: span 1 !important;
+  }
+
+  .values-vr {
+    left: 10%;
+    width: 120px;
+  }
+
+  .values-earth {
+    right: 5%;
+    width: 120px;
+  }
+}
+
+@media (max-width: 640px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .values-vr,
+  .values-earth {
+    display: none;
+  }
+}

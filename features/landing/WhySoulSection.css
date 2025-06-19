@@ -1,0 +1,14 @@
+.why-soul-section {
+  padding: 4rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+
+.why-soul-img {
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  display: block;
+}

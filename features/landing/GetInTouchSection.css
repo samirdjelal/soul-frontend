@@ -1,0 +1,109 @@
+/* src/features/landing/GetInTouchSection.css */
+
+.getintouch-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.getintouch-left {
+  flex: 1;
+  min-width: 280px;
+}
+
+.getintouch-left h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 0.5rem;
+}
+
+.getintouch-left h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.getintouch-left p {
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.contact-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+}
+
+.contact-detail a,
+.contact-detail p {
+  color: #1b1b1b;
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+.getintouch-right {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.getintouch-right .row {
+  display: flex;
+  gap: 1rem;
+}
+
+.getintouch-right input,
+.getintouch-right select,
+.getintouch-right textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.getintouch-right select {
+  background: #fff;
+}
+
+.checkbox {
+  font-size: 0.85rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.getintouch-right button {
+  background-color: #0a3161;
+  color: white;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.getintouch-right button:hover {
+  background-color: #082744;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .getintouch-section {
+    flex-direction: column;
+  }
+
+  .getintouch-right .row {
+    flex-direction: column;
+  }
+}

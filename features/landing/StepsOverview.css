@@ -1,0 +1,58 @@
+/* src/features/landing/StepsOverview.css */
+.steps-section {
+  background-image: url('/home/hero/steps-visual.png'); /* Use the correct relative path */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.steps-overlay {
+  background: rgba(0, 0, 0, 0.4); /* subtle darkening if needed */
+  padding: 4rem 2rem;
+  max-width: 50%;
+  min-width: 320px;
+}
+
+.steps-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.step {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.step-number {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.step-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.step-description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .steps-section {
+    background-position: 40%;
+  }
+
+  .steps-overlay {
+    max-width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+  }
+}

@@ -1,0 +1,94 @@
+/* src/features/landing/ProgramsSection.css */
+
+.programs-section {
+  padding: 3rem 1rem;
+  max-width: 1300px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.programs-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0a3161;
+}
+
+.programs-subtitle {
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  color: #444;
+}
+
+.programs-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.programs-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+  position: relative;
+}
+
+.programs-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px 12px 0 0;
+}
+
+.programs-card .programs-content {
+  padding: 1rem 1rem 0;
+}
+
+.programs-card .programs-heading {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #222;
+  margin-bottom: 0.25rem;
+}
+
+.programs-card .programs-desc {
+  font-size: 0.85rem;
+  color: #444;
+}
+
+.programs-card .programs-action {
+  margin-top: 0.75rem;
+  padding: 0 1rem;
+  color: #f44336;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.programs-stroke {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 1024px) {
+  .programs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .programs-grid {
+    grid-template-columns: 1fr;
+  }
+}

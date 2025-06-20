@@ -20,7 +20,7 @@ const Home = () => {
   return (
     <MainLayout>
       <Hero />
-      <Features />
+      <Features /> //done
       <EventsSection />
       <PartnersSection />
       <OfferPrograms />

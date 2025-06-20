@@ -5,6 +5,9 @@ const logos = [
   { src: "/home/partners/kzaad.png", alt: "Kzaad" },
   { src: "/home/partners/payd.png", alt: "Payd" },
   { src: "/home/partners/click2secure.png", alt: "Click2Secure" },
+  { src: "/home/partners/kzaad.png", alt: "Kzaad" },
+  { src: "/home/partners/payd.png", alt: "Payd" },
+  { src: "/home/partners/click2secure.png", alt: "Click2Secure" },
 ];
 
 const PartnersSection = () => {
@@ -42,7 +45,7 @@ const PartnersSection = () => {
       </h2>
 
       <div ref={sliderRef} className="keen-slider">
-        {logos.map((logo, index) => (
+        {[...logos, ...logos].map((logo, index) => (
           <div className="keen-slider__slide" key={index}>
             <img
               src={logo.src}

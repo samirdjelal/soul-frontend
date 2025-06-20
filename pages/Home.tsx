@@ -20,9 +20,9 @@ const Home = () => {
   return (
     <MainLayout>
       <Hero />
-      <Features /> //done
+      <Features /> 
       <EventsSection />
-      <PartnersSection />
+      <PartnersSection />//done
       <OfferPrograms />
       <CallToAction />
       <StepsOverview />

@@ -41,16 +41,16 @@ const OfferPrograms = () => {
       <div className="offer-layout-grid">
         {offers.map((offer) => (
           <div key={offer.title} className={`offer-card ${offer.className}`}>
-            <div className="offer-content">
-              <h3 className="offer-heading">{offer.title}</h3>
-              <p>{offer.description}</p>
-            </div>
             <img
               src={offer.image}
               alt={offer.title}
               className="offer-image"
               loading="lazy"
             />
+            <div className="offer-content">
+              <h3 className="offer-heading">{offer.title}</h3>
+              <p>{offer.description}</p>
+            </div>
           </div>
         ))}
       </div>

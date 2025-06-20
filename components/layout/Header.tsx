@@ -1,4 +1,3 @@
-// src/components/layout/Header.tsx
 import { useState } from "react";
 import "./Header.css";
 
@@ -9,7 +8,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div className="container">
+      <div className="header-container">
         <div className="logo">
           <img src="/soul-logo.png" alt="Soul UAQ Logo" />
         </div>
@@ -25,6 +24,7 @@ const Header = () => {
         <button
           className="menu-toggle"
           onClick={() => setMenuOpen((prev) => !prev)}
+          aria-label="Toggle menu"
         >
           ☰
         </button>

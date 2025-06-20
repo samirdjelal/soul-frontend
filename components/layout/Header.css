@@ -1,5 +1,4 @@
 /* src/components/layout/Header.css */
-
 .header {
   position: fixed;
   top: 0;
@@ -8,30 +7,46 @@
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
   z-index: 1000;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
 }
 
-.container {
-  max-width: 1200px;
+.header-container {
+  width: 100%;
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 0 var(--container-padding);
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+.logo {
+  flex-shrink: 0;
+}
+
 .logo img {
   height: 48px;
+  width: auto;
 }
 
 .nav {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
+  align-items: center;
 }
 
 .nav a {
   text-decoration: none;
   color: #1f2937;
   font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover {
+  color: #4f46e5;
 }
 
 .menu-toggle {
@@ -39,6 +54,8 @@
   background: none;
   border: none;
   font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
 }
 
 @media (max-width: 768px) {
@@ -47,11 +64,13 @@
     flex-direction: column;
     background-color: white;
     position: absolute;
-    top: 100%;
+    top: var(--header-height);
+    left: 0;
     right: 0;
     width: 100%;
-    padding: 1rem 2rem;
+    padding: 1rem var(--container-padding);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    gap: 1rem;
   }
 
   .nav.open {

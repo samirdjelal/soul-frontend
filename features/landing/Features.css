@@ -1,0 +1,78 @@
+/* src/features/landing/Features.css */
+.features-section {
+  padding: 4rem 0;
+}
+
+.features-header {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.features-header h2 {
+  font-weight: 700;
+  font-size: 2.25rem;
+}
+
+.accent-text {
+  color: #d32f2f;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.feature-card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.feature-card {
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-image {
+  width: 100%;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.feature-content {
+  padding: 1.5rem;
+  text-align: left;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.feature-title {
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-description {
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1.5rem;
+  }
+}

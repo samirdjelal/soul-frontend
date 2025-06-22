@@ -1,12 +1,21 @@
 // src/pages/FounderSchool.tsx
 
-import MainLayout from "../layouts/MainLayout";
-//import IntroSection from "../features/FounderSchool/IntroSection";
+import React from 'react';
+import MainLayout from '../layouts/MainLayout';
+import IntroSection from '../features/FounderSchool/IntroSection';
+import ApplySection from '../features/FounderSchool/ApplySection';
+import ExplorePrograms from '../features/FounderSchool/ExplorePrograms';
+import FAQsSection from '../features/landing/FAQsSection';
+import GetInTouchSection from '../features/landing/GetInTouchSection';
 
-const FounderSchoolPage = () => {
+const FounderSchoolPage: React.FC = () => {
   return (
     <MainLayout>
-      {/* <IntroSection /> */}
+      <IntroSection />
+      <ApplySection />
+      <ExplorePrograms />
+      <FAQsSection />
+      <GetInTouchSection />
     </MainLayout>
   );
 };

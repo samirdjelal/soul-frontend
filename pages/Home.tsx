@@ -22,10 +22,10 @@ const Home = () => {
       <Hero />
       <Features /> 
       <EventsSection />
-      <PartnersSection />//done
+      <PartnersSection />
       <OfferPrograms />
       <CallToAction />
-      <StepsOverview />
+      <StepsOverview /> //done
       <BlogHighlights />
       <ProgramsSection />
       <AboutUsSection />

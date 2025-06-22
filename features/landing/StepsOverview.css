@@ -1,58 +1,113 @@
 /* src/features/landing/StepsOverview.css */
 .steps-section {
-  background-image: url('/home/hero/steps-visual.png'); /* Use the correct relative path */
-  background-size: cover;
-  background-position: center;
-  color: white;
   width: 100%;
-  min-height: 500px;
+  min-height: 600px;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   position: relative;
+  background-color: #f5f5f5;
+}
+
+.container-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.steps-layout {
+  display: flex;
+  width: 100%;
 }
 
 .steps-overlay {
-  background: rgba(0, 0, 0, 0.4); /* subtle darkening if needed */
-  padding: 4rem 2rem;
-  max-width: 50%;
-  min-width: 320px;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8));
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
 }
 
 .steps-content {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
+  max-width: 480px;
+}
+
+.steps-image {
+  width: 50%;
+  overflow: hidden;
+}
+
+.steps-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .step {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
 .step-number {
-  font-size: 2rem;
+  font-size: 4rem;
   font-weight: bold;
+  color: #fff;
 }
 
 .step-title {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  color: #fff;
+  margin-bottom: 0.75rem;
 }
 
 .step-description {
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #f0f0f0;
 }
 
 @media (max-width: 768px) {
-  .steps-section {
-    background-position: 40%;
+  .container-wrapper {
+    padding: 4rem 1.5rem;
+  }
+
+  .steps-layout {
+    flex-direction: column;
   }
 
   .steps-overlay {
+    width: 100%;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+    padding: 3rem 1.5rem;
+  }
+
+  .steps-image {
+    width: 100%;
+    height: 300px;
+  }
+
+  .steps-content {
     max-width: 100%;
-    background: rgba(0, 0, 0, 0.6);
+  }
+
+  .step {
+    gap: 1.5rem;
+  }
+
+  .step-number {
+    font-size: 3rem;
+  }
+
+  .step-title {
+    font-size: 1.25rem;
+  }
+
+  .step-description {
+    font-size: 0.95rem;
   }
 }

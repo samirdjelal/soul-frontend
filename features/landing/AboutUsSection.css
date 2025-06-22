@@ -40,6 +40,11 @@
   flex-direction: row-reverse;
 }
 
+/* ← only added: swap image/text inside the second block */
+.about-block.reverse .about-card-inner {
+  flex-direction: row-reverse;
+}
+
 .about-card {
   flex: 1 1 45%;
   background: #fff;

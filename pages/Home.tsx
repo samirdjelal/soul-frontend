@@ -28,10 +28,10 @@ const Home = () => {
       <StepsOverview /> 
       <BlogHighlights />
       <ProgramsSection /> 
-      <AboutUsSection /> //done
-      <ValuesSection />
-      <SuccessStoriesSection />
-      <WhySoulSection />
+      <AboutUsSection /> 
+      <ValuesSection /> 
+      <SuccessStoriesSection />  
+      <WhySoulSection /> //done
       <FAQsSection />
       <GetInTouchSection/>
       

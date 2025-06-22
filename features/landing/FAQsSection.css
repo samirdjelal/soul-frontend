@@ -1,8 +1,16 @@
+/* src/features/landing/FAQsSection.css */
 .faqs-section {
-  padding: 4rem 1rem;
+  padding: 4rem 0;
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
+}
+
+.container-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .faqs-heading {
@@ -14,28 +22,34 @@
 
 .faqs-subheading {
   color: #444;
-  font-size: 1rem;
-  margin-bottom: 2rem;
+  font-size: 1.125rem;
+  margin-bottom: 2.5rem;
 }
 
 .faqs-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .faq-item {
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 1rem 1.25rem;
+  padding: 1.25rem 1.5rem;
   cursor: pointer;
   text-align: left;
-  transition: box-shadow 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .faq-item:hover {
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.faq-item-inner {
+  display: flex;
+  flex-direction: column;
 }
 
 .faq-question {
@@ -59,6 +73,10 @@
 }
 
 @media (max-width: 768px) {
+  .container-wrapper {
+    padding: 0 1.5rem;
+  }
+
   .faqs-grid {
     grid-template-columns: 1fr;
   }

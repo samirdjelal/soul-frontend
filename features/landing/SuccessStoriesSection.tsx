@@ -21,7 +21,7 @@ const stories = [
     name: 'Elina Costa, Maya Tanaka, Derya Kaplan',
     role: 'Founders, Klima',
     description:
-      'Klima delivers smart home energy solutions for a greener future. With Soul’s mentorship, they reached MVP stage and gained investor interest.',
+      "Klima delivers smart home energy solutions for a greener future. With Soul's mentorship, they reached MVP stage and gained investor interest.",
     image: '/home/success/elina.png',
   },
 ];
@@ -29,16 +29,22 @@ const stories = [
 const SuccessStoriesSection: React.FC = () => {
   return (
     <section className="success-section">
-      <h2 className="success-title">Success stories</h2>
-      <div className="success-grid">
-        {stories.map((story, index) => (
-          <div className="success-card" key={index}>
-            <img src={story.image} alt={story.name} className="success-img" />
-            <div className="success-name">{story.name}</div>
-            <div className="success-role">{story.role}</div>
-            <p className="success-desc">{story.description}</p>
-          </div>
-        ))}
+      <div className="container-wrapper">
+        <h2 className="success-title">Success stories</h2>
+        <div className="success-grid">
+          {stories.map((story, index) => (
+            <div className="success-card" key={index}>
+              <div className="success-card-inner">
+                <img src={story.image} alt={story.name} className="success-img" />
+                <div className="success-content">
+                  <div className="success-name">{story.name}</div>
+                  <div className="success-role">{story.role}</div>
+                  <p className="success-desc">{story.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

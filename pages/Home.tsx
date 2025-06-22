@@ -31,7 +31,7 @@ const Home = () => {
       <AboutUsSection /> 
       <ValuesSection /> 
       <SuccessStoriesSection />  
-      <WhySoulSection /> //done
+      <WhySoulSection /> 
       <FAQsSection />
       <GetInTouchSection/>
       

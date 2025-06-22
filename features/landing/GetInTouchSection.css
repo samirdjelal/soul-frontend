@@ -1,21 +1,45 @@
 /* src/features/landing/GetInTouchSection.css */
-
 .getintouch-section {
+  padding: 4rem 0;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.getintouch-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.getintouch-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.getintouch-content {
   display: flex;
   gap: 3rem;
   flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem;
 }
 
 .getintouch-left {
-  flex: 1;
-  min-width: 280px;
+  flex: 1 1 300px;
 }
 
 .getintouch-left h4 {
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #444;
   margin-bottom: 0.5rem;
@@ -25,6 +49,7 @@
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  color: #0a3161;
 }
 
 .getintouch-left p {
@@ -32,32 +57,45 @@
   color: #333;
 }
 
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
 .contact-detail {
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
-  margin-bottom: 1.2rem;
   font-size: 0.95rem;
 }
 
-.contact-detail a,
-.contact-detail p {
+.icon {
+  font-size: 1.1rem;
+  color: #0a3161;
+}
+
+.contact-info {
   color: #1b1b1b;
   text-decoration: none;
   line-height: 1.4;
 }
 
 .getintouch-right {
-  flex: 1;
-  min-width: 280px;
+  flex: 1 1 300px;
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.getintouch-right .row {
+.form-row {
   display: flex;
   gap: 1rem;
+}
+
+.form-field {
+  flex: 1;
+  position: relative;
 }
 
 .getintouch-right input,
@@ -65,13 +103,27 @@
 .getintouch-right textarea {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   border-radius: 6px;
   font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.getintouch-right input:focus,
+.getintouch-right select:focus,
+.getintouch-right textarea:focus {
+  outline: none;
+  border-color: #0a3161;
+  box-shadow: 0 0 6px rgba(10, 49, 97, 0.2);
 }
 
 .getintouch-right select {
   background: #fff;
+}
+
+.checkbox-field {
+  display: flex;
+  align-items: center;
 }
 
 .checkbox {
@@ -80,9 +132,14 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  cursor: pointer;
 }
 
-.getintouch-right button {
+.checkbox span {
+  line-height: 1.4;
+}
+
+.submit-button {
   background-color: #0a3161;
   color: white;
   padding: 0.75rem 2rem;
@@ -91,19 +148,25 @@
   font-weight: 500;
   cursor: pointer;
   margin-top: 0.5rem;
+  transition: background-color 0.2s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.getintouch-right button:hover {
+.submit-button:hover {
   background-color: #082744;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(10, 49, 97, 0.2);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-  .getintouch-section {
+  .container-wrapper {
+    padding: 0 1.5rem;
+  }
+
+  .getintouch-content {
     flex-direction: column;
   }
 
-  .getintouch-right .row {
+  .form-row {
     flex-direction: column;
   }
 }

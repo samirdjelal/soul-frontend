@@ -27,8 +27,8 @@ const Home = () => {
       <CallToAction />
       <StepsOverview /> 
       <BlogHighlights />
-      <ProgramsSection /> //done
-      <AboutUsSection />
+      <ProgramsSection /> 
+      <AboutUsSection /> //done
       <ValuesSection />
       <SuccessStoriesSection />
       <WhySoulSection />

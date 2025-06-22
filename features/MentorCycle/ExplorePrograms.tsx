@@ -1,23 +1,23 @@
-// src/features/incubation/ExplorePrograms.tsx
+// src/features/MentorCycle/ExplorePrograms.tsx
 import React from "react";
 import "./ExplorePrograms.css";
 
 const programs = [
   {
-    title: "Acceleration program",
+    title: "Acceleration Program",
     description:
       "We help startups refine their pitch, grow their user base, and connect directly with top investors.",
     applyLabel: "Apply",
     learnLabel: "Learn",
-    image: "/incubation/explore/acceleration.png",
+    image: "/mentor/introsection/imgv1.png",
   },
   {
-    title: "Mentorship Circle",
+    title: "Incubation Program",
     description:
-      "The Mentorship Circle connects you with experienced mentors and fellow entrepreneurs for authentic advice and support.",
+      "Our Incubation Program is designed for early-stage founders ready to turn concepts into working products.",
     applyLabel: "Apply",
     learnLabel: "Learn",
-    image: "/incubation/explore/mentorship.png",
+    image: "/mentor/introsection/imgv2.png",
   },
   {
     title: "Founder School",
@@ -25,7 +25,7 @@ const programs = [
       "Founder School is an interactive learning track designed to help you launch, lead, and grow your startup.",
     applyLabel: "Apply",
     learnLabel: "Learn",
-    image: "/incubation/explore/founder.png",
+    image: "/mentor/introsection/imgv3.png",
   },
 ];
 

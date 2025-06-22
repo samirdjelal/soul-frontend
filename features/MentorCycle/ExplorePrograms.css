@@ -1,4 +1,4 @@
-/* src/features/incubation/ExplorePrograms.css */
+/* src/features/MentorCycle/ExplorePrograms.css */
 
 .explore-section {
   padding: 4rem 1rem 2rem;
@@ -35,7 +35,6 @@
   flex-direction: column;
   background-color: #fff;
 
-  /* added 3D lift effect */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   transform-style: preserve-3d;
   perspective: 800px;
@@ -79,8 +78,6 @@
   font-size: 0.85rem;
   border-radius: 4px;
   cursor: pointer;
-
-  /* ensure the button still has its own smooth hover */
   transition: background-color 0.2s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 .btn-primary:hover {

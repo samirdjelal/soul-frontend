@@ -1,9 +1,25 @@
-/* src/features/incubation/ApplySection.css */
+/* src/features/MentorCycle/ApplySection.css */
+/* (based on your Incubation ApplySection.css, just renamed for MentorCycle) */
+
 .apply-section {
   padding: 4rem 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.apply-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
-  font-family: 'Poppins', sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  perspective: 800px;
+}
+.apply-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
 
 .apply-container {
@@ -16,18 +32,15 @@
   align-items: baseline;
   margin-bottom: 0.5rem;
 }
-
 .apply-header h3 {
   font-size: 1.75rem;
   font-weight: 700;
   color: #0a3161;
 }
-
 .required-note {
   font-size: 0.875rem;
   color: #555;
 }
-
 .asterisk {
   color: #e53935;
 }
@@ -48,13 +61,11 @@
   display: flex;
   flex-direction: column;
 }
-
 .form-group label {
   font-size: 0.95rem;
   color: #111;
   margin-bottom: 0.5rem;
 }
-
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -64,13 +75,12 @@
   border-radius: 6px;
   font-family: inherit;
 }
-
 .form-group textarea {
   min-height: 100px;
   resize: vertical;
 }
 
-/* Submit button spans both columns and has 3D lift */
+/* Submit button spans both columns */
 .apply-button {
   grid-column: 1 / -1;
   justify-self: center;
@@ -100,20 +110,4 @@
     flex-direction: column;
     align-items: start;
   }
-}
-
-.apply-card {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  transform-style: preserve-3d;
-  perspective: 800px;
-}
-.apply-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }

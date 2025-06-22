@@ -56,23 +56,26 @@ const programs = [
 const ProgramsSection: React.FC = () => {
   return (
     <section className="programs-section">
-      <h2 className="programs-title">Empowering Founders Through Structured Programs</h2>
-      <p className="programs-subtitle">
-        Soul offers targeted programs to support your startup journey — from idea to global scale.
-      </p>
+      <div className="container-wrapper">
+        <h2 className="programs-title">Empowering Founders Through Structured Programs</h2>
+        <p className="programs-subtitle">
+          Soul offers targeted programs to support your startup journey — from idea to global scale.
+        </p>
 
-      <div className="programs-grid">
-        <img src="/home/programs/connector-stroke.svg" alt="decorative stroke" className="programs-stroke" />
-        {programs.map((program, index) => (
-          <div className="programs-card" key={index}>
-            <img src={program.image} alt={program.title} />
-            <div className="programs-content">
-              <div className="programs-heading">{program.title}</div>
-              <div className="programs-desc">{program.description}</div>
-              <div className="programs-action">{program.action}</div>
+        <div className="programs-grid">
+          {programs.map((program, index) => (
+            <div key={index} className="programs-card">
+              <div className="programs-card-inner">
+                <img src={program.image} alt={program.title} />
+                <div className="programs-content">
+                  <div className="programs-heading">{program.title}</div>
+                  <div className="programs-desc">{program.description}</div>
+                  <div className="programs-action">{program.action}</div>
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

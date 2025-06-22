@@ -25,9 +25,9 @@ const Home = () => {
       <PartnersSection />
       <OfferPrograms />
       <CallToAction />
-      <StepsOverview /> //done
+      <StepsOverview /> 
       <BlogHighlights />
-      <ProgramsSection />
+      <ProgramsSection /> //done
       <AboutUsSection />
       <ValuesSection />
       <SuccessStoriesSection />

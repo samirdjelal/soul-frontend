@@ -39,11 +39,22 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  /* add 3D “lift” effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  perspective: 800px;
+}
+.offer-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .offer-image {
   width: 100%;
-  height: 180px;
+  /* allow the image to size itself so nothing is clipped */
+  height: auto;
+  max-height: 180px;
   object-fit: cover;
 }
 
@@ -85,6 +96,7 @@
   }
 
   .offer-image {
-    height: 220px;
+    /* keep a sensible max height on narrow viewports */
+    max-height: 220px;
   }
 }

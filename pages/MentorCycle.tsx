@@ -1,16 +1,23 @@
 // src/pages/MentorCycle.tsx
 
-import MainLayout from "../layouts/MainLayout";
+import React from 'react';
+import MainLayout from '../layouts/MainLayout';
+import IntroSection from '../features/MentorCycle/IntroSection';
+import ApplySection from '../features/MentorCycle/ApplySection';
+import ExplorePrograms from '../features/MentorCycle/ExplorePrograms';
+import FAQsSection from '../features/landing/FAQsSection';
+import GetInTouchSection from '../features/landing/GetInTouchSection';
 
-const MentorshipCirclePage = () => {
+const MentorCyclePage: React.FC = () => {
   return (
     <MainLayout>
-      <div style={{ padding: "3rem", textAlign: "center" }}>
-        <h1>Mentorship Circle Page</h1>
-        <p>Content coming soon...</p>
-      </div>
+      <IntroSection />
+      <ApplySection />
+      <ExplorePrograms />
+      <FAQsSection />
+      <GetInTouchSection />
     </MainLayout>
   );
 };
 
-export default MentorshipCirclePage;
+export default MentorCyclePage;

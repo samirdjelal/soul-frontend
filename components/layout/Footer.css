@@ -1,10 +1,18 @@
+/* src/components/layout/Footer.css */
 .footer {
-  padding: 2.5rem 1rem;
+  padding: 3rem 0;
   background: #fff;
   font-size: 0.95rem;
   color: #1b1b1b;
   max-width: 1300px;
   margin: 0 auto;
+}
+
+.container-wrapper {
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .footer-top {
@@ -15,8 +23,7 @@
 }
 
 .newsletter {
-  flex: 1;
-  min-width: 260px;
+  flex: 1 1 300px;
 }
 
 .newsletter .subscribe-row {
@@ -33,7 +40,7 @@
   font-size: 0.95rem;
 }
 
-.newsletter button {
+.subscribe-button {
   padding: 0.5rem 1rem;
   background-color: #0a3161;
   color: white;
@@ -41,6 +48,13 @@
   font-size: 0.95rem;
   border-radius: 0 4px 4px 0;
   cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subscribe-button:hover {
+  background-color: #082744;
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(10, 49, 97, 0.2);
 }
 
 .newsletter small {
@@ -50,10 +64,9 @@
 
 .footer-links {
   display: flex;
-  flex: 2;
+  flex: 2 1 600px;
   justify-content: space-between;
   gap: 2rem;
-  min-width: 300px;
   flex-wrap: wrap;
 }
 
@@ -64,8 +77,9 @@
   min-width: 120px;
 }
 
-.footer-col p {
-  font-weight: bold;
+.footer-col h4 {
+  font-size: 1rem;
+  font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
@@ -73,10 +87,20 @@
   color: #1b1b1b;
   text-decoration: none;
   font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s ease;
 }
 
 .footer-col a:hover {
-  text-decoration: underline;
+  color: #0a3161;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .footer-divider {
@@ -91,8 +115,11 @@
   color: #666;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
+  .container-wrapper {
+    padding: 0 1.5rem;
+  }
+
   .footer-top {
     flex-direction: column;
     gap: 2rem;

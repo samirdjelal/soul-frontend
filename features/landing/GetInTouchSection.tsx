@@ -1,8 +1,95 @@
 // src/features/landing/GetInTouchSection.tsx
-import React from 'react';
+import React, { useState } from 'react';
 import './GetInTouchSection.css';
 
+const FORM_ENDPOINT = 'https://formspree.io/f/xanjpkjd';
+
+type Status = 'idle' | 'sending' | 'success' | 'error';
+
 const GetInTouchSection: React.FC = () => {
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    topic: '',
+    message: '',
+    agree: false,
+  });
+  const [status, setStatus] = useState<Status>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value, type, checked } = e.target;
+    setFormData(fd => ({
+      ...fd,
+      [name]: type === 'checkbox' ? checked : value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    // Basic validation
+    const { firstName, lastName, email, phone, topic, message, agree } = formData;
+    if (!firstName || !lastName || !email || !phone || !topic || !message || !agree) {
+      setErrorMsg('Please complete all fields and agree to Terms.');
+      return;
+    }
+
+    setStatus('sending');
+    setErrorMsg('');
+
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          'First Name': firstName,
+          'Last Name': lastName,
+          Email: email,
+          'Phone Number': phone,
+          Topic: topic,
+          Message: message,
+        }),
+      });
+      if (res.ok) {
+        setStatus('success');
+        setFormData({
+          firstName: '',
+          lastName: '',
+          email: '',
+          phone: '',
+          topic: '',
+          message: '',
+          agree: false,
+        });
+      } else {
+        throw new Error(`Status ${res.status}`);
+      }
+    } catch {
+      setErrorMsg('Submission failed. Please try again later.');
+      setStatus('error');
+    }
+  };
+
+  if (status === 'success') {
+    return (
+      <section className="getintouch-section">
+        <div className="container-wrapper">
+          <div className="getintouch-card">
+            <div className="getintouch-content">
+              <p style={{ padding: '2rem', textAlign: 'center', fontWeight: 600 }}>
+                🎉 Thanks for getting in touch! We’ll reply to you shortly.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="getintouch-section">
       <div className="container-wrapper">
@@ -33,40 +120,100 @@ const GetInTouchSection: React.FC = () => {
             </div>
 
             <div className="getintouch-right">
-              <div className="form-row">
-                <div className="form-field">
-                  <input type="text" placeholder="First Name" />
+              {status === 'error' && (
+                <p style={{ color: '#b00020', marginBottom: '1rem', textAlign: 'center' }}>
+                  {errorMsg}
+                </p>
+              )}
+
+              <form onSubmit={handleSubmit} noValidate>
+                <div className="form-row">
+                  <div className="form-field">
+                    <input
+                      name="firstName"
+                      type="text"
+                      placeholder="First Name"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div className="form-field">
+                    <input
+                      name="lastName"
+                      type="text"
+                      placeholder="Last Name"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="form-row">
+                  <div className="form-field">
+                    <input
+                      name="email"
+                      type="email"
+                      placeholder="Email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                  <div className="form-field">
+                    <input
+                      name="phone"
+                      type="text"
+                      placeholder="Phone Number"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
                 </div>
                 <div className="form-field">
-                  <input type="text" placeholder="Last Name" />
+                  <select
+                    name="topic"
+                    value={formData.topic}
+                    onChange={handleChange}
+                    required
+                  >
+                    <option value="">Select a Topic</option>
+                    <option>Partnership Inquiry</option>
+                    <option>Program Details</option>
+                    <option>Investment Inquiry</option>
+                  </select>
                 </div>
-              </div>
-              <div className="form-row">
                 <div className="form-field">
-                  <input type="email" placeholder="Email" />
+                  <textarea
+                    name="message"
+                    placeholder="Write your message..."
+                    rows={5}
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                  />
                 </div>
-                <div className="form-field">
-                  <input type="text" placeholder="Phone Number" />
+                <div className="form-field checkbox-field">
+                  <label className="checkbox">
+                    <input
+                      name="agree"
+                      type="checkbox"
+                      checked={formData.agree}
+                      onChange={handleChange}
+                      required
+                    />
+                    <span>I agree to Terms</span>
+                  </label>
                 </div>
-              </div>
-              <div className="form-field">
-                <select>
-                  <option>Select a Topic</option>
-                  <option>Partnership Inquiry</option>
-                  <option>Program Details</option>
-                  <option>Investment Inquiry</option>
-                </select>
-              </div>
-              <div className="form-field">
-                <textarea placeholder="Write your message..." rows={5}></textarea>
-              </div>
-              <div className="form-field checkbox-field">
-                <label className="checkbox">
-                  <input type="checkbox" />
-                  <span>I agree to Terms</span>
-                </label>
-              </div>
-              <button type="submit" className="submit-button">Send</button>
+                <button
+                  type="submit"
+                  className="submit-button"
+                  disabled={status === 'sending'}
+                >
+                  {status === 'sending' ? 'Sending…' : 'Send'}
+                </button>
+              </form>
             </div>
           </div>
         </div>

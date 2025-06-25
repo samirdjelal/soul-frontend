@@ -1,22 +1,79 @@
 // src/components/layout/Footer.tsx
-import React from "react";
+import React, { useState } from "react";
 import "./Footer.css";
 
+const FORM_ENDPOINT = "https://formspree.io/f/mblyzeyv";
+
 const Footer: React.FC = () => {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim()) {
+      setError("Please enter your email.");
+      return;
+    }
+    setStatus("sending");
+    setError("");
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setEmail("");
+      } else {
+        setStatus("error");
+        setError("Subscription failed. Please try again.");
+      }
+    } catch {
+      setStatus("error");
+      setError("An unexpected error occurred. Please try again.");
+    }
+  };
+
   return (
     <footer className="footer">
       <div className="container-wrapper">
         <div className="footer-top">
           <div className="newsletter">
-            <p>Join our newsletter to stay updated on features and releases.</p>
-            <div className="subscribe-row">
-              <input type="email" placeholder="Enter your email" />
-              <button className="subscribe-button">Subscribe</button>
-            </div>
-            <small>
-              By subscribing, you agree to our Privacy Policy and consent to
-              receive updates.
-            </small>
+            {status === "success" ? (
+              <p style={{ color: "#007a29", fontWeight: 600 }}>
+                🎉 Thanks for subscribing!
+              </p>
+            ) : (
+              <form onSubmit={handleSubmit} noValidate>
+                <p>Join our newsletter to stay updated on features and releases.</p>
+                {error && (
+                  <p style={{ color: "#b00020", marginBottom: "0.5rem" }}>
+                    {error}
+                  </p>
+                )}
+                <div className="subscribe-row">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
+                  <button
+                    type="submit"
+                    className="subscribe-button"
+                    disabled={status === "sending"}
+                  >
+                    {status === "sending" ? "Sending…" : "Subscribe"}
+                  </button>
+                </div>
+                <small>
+                  By subscribing, you agree to our Privacy Policy and consent to receive updates.
+                </small>
+              </form>
+            )}
           </div>
 
           <div className="footer-links">

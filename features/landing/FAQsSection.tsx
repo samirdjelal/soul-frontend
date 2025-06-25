@@ -5,11 +5,11 @@ import './FAQsSection.css';
 const faqData = [
   {
     question: 'Who is Soul for?',
-    answer: 'Soul is designed for early-stage entrepreneurs and startups looking to launch and scale their businesses. We welcome founders from all backgrounds and industries.',
+    answer: 'SOUL is designed for ambitious entrepreneurs, innovative creators, and visionary startups looking to grow in the UAE. Whether you’re a first-time founder, a tech innovator, or part of a creative community, SOUL provides the resources, support, and network to help you turn your ideas into successful businesses.',
   },
   {
     question: 'Can foreign founders apply?',
-    answer: 'Absolutely! Soul welcomes applications from both local and international founders. We provide support and guidance to help you navigate the process of setting up your business in the UAE.',
+    answer: 'Absolutely! In fact, 60% of our founders come from international backgrounds. We fully support foreign entrepreneurs by managing 100% of the visa and residency processes, making it easy for you to establish your business and settle in without any hassle.',
   },
   {
     question: 'What features does Soul offer?',
@@ -17,23 +17,28 @@ const faqData = [
   },
   {
     question: 'Do you invest directly in startups?',
-    answer: 'While Soul does not directly invest in startups, we have strong relationships with a network of investors and can facilitate introductions and funding opportunities for our program participants.',
+    answer: 'We don’t invest directly in startups, but we connect you with a network of over 50+ VCs and angel investors. In fact, 70% of SOUL startups successfully secure funding within 12 months through our network and investor platforms.',
   },
   {
     question: "What's the duration of the incubation program?",
-    answer: 'The duration of our incubation program is typically 6-12 months, depending on the stage and needs of your startup. We work closely with each founder to create a customized roadmap and timeline.',
+    answer: 'Our incubation program offers flexible tracks ranging from 3 to 12 months, tailored to your startup’s needs. On average, startups graduate within 6 months, achieving impressive revenue growth of 2.5 times during the program.',
   },
   {
     question: "What's included in the licensing package?",
-    answer: 'Our licensing package includes everything you need to set up your business in the UAE, such as company registration, trade license, visa sponsorship, and more. We handle all the administrative tasks so you can focus on building your startup.',
+    answer: 'The license package is priced at AED 14,150 and includes a 1-year trade license, 4 visa quotas, and the option for up to 10 shareholder slots. It also covers 2 approved business activities of your choice, along with complimentary access to co-working spaces within our facility. This package offers a comprehensive solution for entrepreneurs looking to establish and grow their business with flexibility and added value.',
   },
   {
     question: 'Do you provide office space?',
-    answer: 'Yes, Soul offers co-working space and private offices for our program participants. Our modern, well-equipped facilities provide a collaborative and inspiring environment to help your startup thrive.',
+    answer: 'Yes! We offer free co-working space within UAQ Free Trade Zone, allowing you to save up to 40% compared to Dubai. Enjoy 24/7 access, fully equipped meeting rooms, and high-speed internet, all designed to support your productivity and business growth.',
   },
   {
+    question: 'How fast is the business setup process?',
+    answer: 'With our streamlined approach and pre-approved Free Trade Zone (FTZ) templates, you can get your business license in as little as 7 days. This is significantly faster than the typical UAE average of 30 days. Our efficient process eliminates unnecessary delays, allowing you to start your operations quickly and with confidence. By leveraging our ready-to-use templates and expert support, setting up your business becomes a smooth and hassle-free experience.',
+  },
+  
+  {
     question: 'What makes SOUL different from other UAE incubators?',
-    answer: 'What sets Soul apart is our deep commitment to the success of our founders. We go beyond just providing resources and mentorship – we become true partners in your journey, leveraging our extensive network and expertise to help you achieve your goals.',
+    answer: 'SOUL offers startups a 70% funding success rate and a guaranteed business setup within 7 days. With an affordable AED 14,500 all-inclusive license, 4 free visas included, strong mentorship, dedicated support, and supported by Umm Al Quwain Free Trade Zone, SOUL provides a fast, affordable, and well-supported environment for entrepreneurs to launch and grow in the UAE.',
   },
 ];
 

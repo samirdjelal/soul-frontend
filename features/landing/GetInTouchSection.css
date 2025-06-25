@@ -126,14 +126,7 @@
   align-items: center;
 }
 
-.checkbox {
-  font-size: 0.85rem;
-  color: #333;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-}
+
 
 .checkbox span {
   line-height: 1.4;

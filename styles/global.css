@@ -6,6 +6,7 @@
   --max-width: 1000px;
   --container-padding: 3rem;
   --header-height: 80px;
+  --content-section-spacing: 80px;
 }
 
 body {
@@ -26,6 +27,9 @@ body {
   box-sizing: border-box;
 }
 
+.content-section-with-spacing {
+  padding-top: var(--content-section-spacing);
+}
 /* Add this to reset any default padding */
 #root {
   padding: 0;

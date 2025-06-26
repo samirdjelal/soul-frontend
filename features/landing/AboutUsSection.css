@@ -1,4 +1,5 @@
 /* src/features/landing/AboutUsSection.css */
+
 .about-section {
   padding: 4rem 0;
   max-width: 1200px;
@@ -31,16 +32,16 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 4rem;
   gap: 2rem;
   flex-wrap: wrap;
+  margin-bottom: 4rem;
 }
 
 .about-block.reverse {
   flex-direction: row-reverse;
 }
 
-/* ← only added: swap image/text inside the second block */
+/* swap image/text on desktop for the reverse block */
 .about-block.reverse .about-card-inner {
   flex-direction: row-reverse;
 }
@@ -95,14 +96,11 @@
     padding: 0 1.5rem;
   }
 
-  .about-block {
+  .about-block,
+  .about-block.reverse {
     flex-direction: column;
     text-align: left;
     margin-bottom: 3rem;
-  }
-
-  .about-block.reverse {
-    flex-direction: column;
   }
 
   .about-card {
@@ -111,6 +109,11 @@
   }
 
   .about-card-inner {
+    flex-direction: column;
+  }
+
+  /* override desktop reverse on mobile */
+  .about-block.reverse .about-card-inner {
     flex-direction: column;
   }
 

@@ -1,13 +1,24 @@
 // src/features/landing/GetInTouchSection.tsx
-import React, { useState } from 'react';
+import React, { useState} from 'react';
+import type { ChangeEvent } from 'react';
 import './GetInTouchSection.css';
 
 const FORM_ENDPOINT = 'https://formspree.io/f/xanjpkjd';
 
 type Status = 'idle' | 'sending' | 'success' | 'error';
 
+interface FormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  topic: string;
+  message: string;
+  agree: boolean;
+}
+
 const GetInTouchSection: React.FC = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',
     email: '',
@@ -20,12 +31,15 @@ const GetInTouchSection: React.FC = () => {
   const [errorMsg, setErrorMsg] = useState('');
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) => {
-    const { name, value, type, checked } = e.target;
-    setFormData(fd => ({
-      ...fd,
-      [name]: type === 'checkbox' ? checked : value,
+    const target = e.target as HTMLInputElement; // Type assertion
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    setFormData(prev => ({
+      ...prev,
+      [name]: value,
     }));
   };
 
@@ -81,7 +95,7 @@ const GetInTouchSection: React.FC = () => {
           <div className="getintouch-card">
             <div className="getintouch-content">
               <p style={{ padding: '2rem', textAlign: 'center', fontWeight: 600 }}>
-                🎉 Thanks for getting in touch! We’ll reply to you shortly.
+                🎉 Thanks for getting in touch! We'll reply to you shortly.
               </p>
             </div>
           </div>

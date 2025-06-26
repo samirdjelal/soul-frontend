@@ -8,10 +8,12 @@ import ExplorePrograms from '../features/MentorCycle/ExplorePrograms';
 import FAQsSection from '../features/landing/FAQsSection';
 import GetInTouchSection from '../features/landing/GetInTouchSection';
 
+
 const MentorCyclePage: React.FC = () => {
   return (
     <MainLayout>
-      <IntroSection />
+      
+      <IntroSection/>
       <ApplySection />
       <ExplorePrograms />
       <FAQsSection />

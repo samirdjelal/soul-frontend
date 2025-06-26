@@ -1,13 +1,57 @@
 // src/components/layout/Footer.tsx
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "./Footer.css";
 
 const FORM_ENDPOINT = "https://formspree.io/f/mblyzeyv";
 
+type Status = "idle" | "sending" | "success" | "error";
+
+interface NavItem {
+  label: string;
+  to: string;
+  isScroll?: boolean;
+}
+
+const quickLinks: NavItem[] = [
+  { label: "Home", to: "/" },
+  { label: "Programs", to: "/#programs", isScroll: true },
+  { label: "Success Stories", to: "/#success-stories", isScroll: true },
+  { label: "Contact Us", to: "/#contact", isScroll: true },
+];
+
+const aboutLinks: NavItem[] = [
+  { label: "FAQs", to: "/#faqs", isScroll: true },
+  { label: "About us", to: "/#about-us", isScroll: true },
+  { label: "Programs", to: "/#programs", isScroll: true },
+];
+
+const socialLinks = [
+  { label: "Facebook", url: "https://www.facebook.com/SOULUAQFTZ/", icon: "fab fa-facebook-f" },
+  { label: "Instagram", url: "https://www.instagram.com/souluaqftz", icon: "fab fa-instagram" },
+  { label: "Twitter", url: "https://x.com/souluaqftz", icon: "fab fa-twitter" },
+  { label: "LinkedIn", url: "https://www.linkedin.com/company/souluaqftz/", icon: "fab fa-linkedin-in" },
+  { label: "YouTube", url: "https://www.youtube.com/@SOULUAQFTZ", icon: "fab fa-youtube" },
+];
+
 const Footer: React.FC = () => {
+  const { pathname } = useLocation();
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
+
+  const scrollOrNav = useCallback(
+    (e: React.MouseEvent, item: NavItem) => {
+      if (item.isScroll && pathname === "/") {
+        e.preventDefault();
+        const id = item.to.replace("/#", "");
+        document
+          .getElementById(id)
+          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    },
+    [pathname]
+  );
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -48,11 +92,7 @@ const Footer: React.FC = () => {
             ) : (
               <form onSubmit={handleSubmit} noValidate>
                 <p>Join our newsletter to stay updated on features and releases.</p>
-                {error && (
-                  <p style={{ color: "#b00020", marginBottom: "0.5rem" }}>
-                    {error}
-                  </p>
-                )}
+                {error && <p style={{ color: "#b00020" }}>{error}</p>}
                 <div className="subscribe-row">
                   <input
                     type="email"
@@ -70,7 +110,8 @@ const Footer: React.FC = () => {
                   </button>
                 </div>
                 <small>
-                  By subscribing, you agree to our Privacy Policy and consent to receive updates.
+                  By subscribing, you agree to our Privacy Policy and consent to
+                  receive updates.
                 </small>
               </form>
             )}
@@ -79,49 +120,41 @@ const Footer: React.FC = () => {
           <div className="footer-links">
             <div className="footer-col">
               <h4>Quick Links</h4>
-              <a href="#">
-                <i className="fas fa-home"></i> Home
-              </a>
-              <a href="#">
-                <i className="fas fa-briefcase"></i> Our Services
-              </a>
-              <a href="#">
-                <i className="fas fa-trophy"></i> Success Stories
-              </a>
-              <a href="#">
-                <i className="fas fa-envelope"></i> Contact Us
-              </a>
+              {quickLinks.map((item) => (
+                <Link
+                  key={item.label}
+                  to={item.to}
+                  onClick={(e) => scrollOrNav(e, item)}
+                >
+                  {item.label}
+                </Link>
+              ))}
             </div>
             <div className="footer-col">
               <h4>About</h4>
-              <a href="#">
-                <i className="fas fa-question-circle"></i> FAQs
-              </a>
-              <a href="#">
-                <i className="fas fa-info-circle"></i> About us
-              </a>
-              <a href="#">
-                <i className="fas fa-graduation-cap"></i> Programs
-              </a>
+              {aboutLinks.map((item) => (
+                <Link
+                  key={item.label}
+                  to={item.to}
+                  onClick={(e) => scrollOrNav(e, item)}
+                >
+                  {item.label}
+                </Link>
+              ))}
             </div>
             <div className="footer-col social">
               <h4>Follow Us</h4>
               <div className="social-links">
-                <a href="#">
-                  <i className="fab fa-facebook-f"></i> Facebook
-                </a>
-                <a href="#">
-                  <i className="fab fa-instagram"></i> Instagram
-                </a>
-                <a href="#">
-                  <i className="fab fa-twitter"></i> Twitter
-                </a>
-                <a href="#">
-                  <i className="fab fa-linkedin-in"></i> LinkedIn
-                </a>
-                <a href="#">
-                  <i className="fab fa-youtube"></i> YouTube
-                </a>
+                {socialLinks.map((s) => (
+                  <a
+                    key={s.label}
+                    href={s.url}
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <i className={s.icon}></i> {s.label}
+                  </a>
+                ))}
               </div>
             </div>
           </div>

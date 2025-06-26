@@ -1,3 +1,5 @@
+// src/pages/Home.tsx
+
 import MainLayout from "../layouts/MainLayout";
 import Hero from "../features/landing/Hero";
 import Features from "../features/landing/Features";
@@ -19,22 +21,21 @@ import GetInTouchSection from "../features/landing/GetInTouchSection";
 const Home = () => {
   return (
     <MainLayout>
-      <Hero />
-      <Features /> 
-      <EventsSection />
-      <PartnersSection />
-      <OfferPrograms />
-      <CallToAction />
-      <StepsOverview /> 
-      <BlogHighlights />
-      <ProgramsSection /> 
-      <AboutUsSection /> 
-      <ValuesSection /> 
-      <SuccessStoriesSection />  
-      <WhySoulSection /> 
-      <FAQsSection />
-      <GetInTouchSection/>
-      
+      <section id="hero"><Hero /></section>
+      <section id="features"><Features /></section>
+      <section id="events"><EventsSection /></section>
+      <section id="partners"><PartnersSection /></section>
+      <section id="offers"><OfferPrograms /></section>
+      <section id="cta"><CallToAction /></section>
+      <section id="steps"><StepsOverview /></section>
+      <section id="blog-highlights"><BlogHighlights /></section>
+      <section id="programs"><ProgramsSection /></section>
+      <section id="about-us"><AboutUsSection /></section>
+      <section id="values"><ValuesSection /></section>
+      <section id="success-stories"><SuccessStoriesSection /></section>
+      <section id="why-soul"><WhySoulSection /></section>
+      <section id="faqs"><FAQsSection /></section>
+      <section id="contact"><GetInTouchSection /></section>
     </MainLayout>
   );
 };

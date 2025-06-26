@@ -38,7 +38,7 @@
   text-align: left;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 
   /* add 3D “lift” effect */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -54,7 +54,7 @@
   width: 100%;
   /* allow the image to size itself so nothing is clipped */
   height: auto;
-  max-height: 180px;
+  /*max-height: 180px;*/
   object-fit: cover;
 }
 
@@ -96,7 +96,7 @@
   }
 
   .offer-image {
-    /* keep a sensible max height on narrow viewports */
-    max-height: 220px;
-  }
+  max-height: none;
+  height: auto;
+}
 }

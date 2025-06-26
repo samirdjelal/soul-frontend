@@ -21,7 +21,7 @@ const offers = [
     title: "Founder Community",
     description:
       "Designed for startups ready to scale. This program includes pitch coaching, growth strategy sessions, and direct introductions to investors.",
-    image: "/home/offers/founder-community.png",
+    image: "/home/offers/test.jpg",
     className: "item-c",
   },
   {

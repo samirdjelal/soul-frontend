@@ -140,23 +140,57 @@
   display: block;
 }
 
+/* ===== Tablet: strict 50/50 split ===== */
+@media (max-width: 1024px) {
+  .intro-container {
+    grid-template-columns: 50% 50%;
+  }
+
+  .intro-images-grid {
+    grid-template-areas:
+      "hero hero"
+      "small1 small2";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: var(--hero-height) var(--small-height);
+    max-height: calc(var(--hero-height) + var(--small-height) + 1rem);
+  }
+}
+
 /* ===== Mobile: hide images, show only text ===== */
 @media (max-width: 768px) {
   .intro-container {
     grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  .intro-text {
+    text-align: center;
+  }
+
+  .intro-text h3 {
+    font-size: 1.75rem;
+  }
+
+  .intro-text h4 {
+    font-size: 1.125rem;
+  }
+
+  .intro-text p {
+    font-size: 0.95rem;
+  }
+
+  .intro-benefits li {
+    justify-content: center;
+  }
+
+  .intro-button {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
   }
 
   .intro-images-grid {
-    display: grid;
-    grid-template-areas: "hero";
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 1rem;
-    max-height: none;
-  }
-
-  .small-card-1,
-  .small-card-2 {
-    display: none;
-  }
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
+}
 }

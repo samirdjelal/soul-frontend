@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import './IntroSection.css';
 
 interface IntroSectionProps {
@@ -10,6 +10,10 @@ interface IntroSectionProps {
   heroHeight?: string;
   /** e.g. "216px" */
   smallHeight?: string;
+  /** Ref to the ApplySection component */
+  applyRef: React.RefObject<HTMLElement | null>;
+  /** Function to scroll to a specific section */
+  onScrollToSection: (sectionId: string) => void;
 }
 
 const IntroSection: React.FC<IntroSectionProps> = ({
@@ -17,6 +21,8 @@ const IntroSection: React.FC<IntroSectionProps> = ({
   imageWidth = '50%',
   heroHeight = '342px',
   smallHeight = '216px',
+  applyRef,
+  onScrollToSection,
 }) => {
   const imgDir = '/mentor/explore';
 
@@ -27,6 +33,10 @@ const IntroSection: React.FC<IntroSectionProps> = ({
     '--hero-height': heroHeight,
     '--small-height': smallHeight,
   } as any;
+
+  const handleApplyClick = () => {
+    onScrollToSection('apply');
+  };
 
   return (
     <section className="intro-section" style={style}>
@@ -39,17 +49,17 @@ const IntroSection: React.FC<IntroSectionProps> = ({
             <p>
               Being a founder often means navigating tough decisions, uncertain
               paths, and moments of doubt — and doing it all alone. But with
-              Mentorship Circle, you don’t have to.
+              Mentorship Circle, you don't have to.
             </p>
             <p>
               This program is built to foster meaningful connections with
               experienced mentors and like-minded entrepreneurs who truly
-              understand the startup journey. Whether you’re facing a strategic
+              understand the startup journey. Whether you're facing a strategic
               dilemma, struggling with growth, or just need a sounding board,
               Mentorship Circle offers a safe, supportive space where you can
               speak openly and get real guidance.
             </p>
-            <h5>What You’ll Get:</h5>
+            <h5>What You'll Get:</h5>
             <ul className="intro-benefits">
               <li>
                 <i className="fas fa-check" /> 1:1 Industry-based mentor
@@ -68,7 +78,9 @@ const IntroSection: React.FC<IntroSectionProps> = ({
                 for candid conversations
               </li>
             </ul>
-            <button className="intro-button">Apply now</button>
+            <button className="intro-button" onClick={handleApplyClick}>
+              Apply now
+            </button>
           </div>
 
           {/* IMAGE GRID */}

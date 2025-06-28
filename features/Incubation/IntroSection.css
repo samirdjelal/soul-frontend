@@ -1,19 +1,18 @@
-/* src/features/incubation/IntroSection.css */
-
 .intro-section {
   padding: 4rem 0;
+  --hero-height: 280px;
+  --small-height: 160px;
 }
 
 .intro-card {
+  max-width: 1200px;
+  margin: 0 auto;
   background: #fff;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   transform-style: preserve-3d;
-  perspective: 800px;
 }
 
 .intro-card:hover {
@@ -23,17 +22,12 @@
 
 .intro-container {
   display: grid;
-  grid-template-columns: 2fr 3fr;               /* 40% text / 60% images */
-  grid-template-rows: auto auto;
-  grid-template-areas:
-    "text images"
-    "text images";
+  grid-template-columns: 50% 50%;
   gap: 2rem;
-  align-items: start;                          /* text spans full height */
+  align-items: start;
 }
 
 .intro-text {
-  grid-area: text;
   display: flex;
   flex-direction: column;
 }
@@ -72,9 +66,8 @@
 .intro-benefits li {
   display: flex;
   align-items: center;
-  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
   color: #1b1b1b;
-  margin-bottom: 0.5rem;
 }
 
 .intro-benefits li i {
@@ -100,35 +93,34 @@
 }
 
 .intro-images-grid {
-  grid-area: images;
   display: grid;
   grid-template-areas:
     "hero hero"
     "small1 small2";
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1.8fr 1fr;                  /* slightly smaller hero image */
+  grid-template-rows: var(--hero-height) var(--small-height);
   gap: 1rem;
+  max-height: calc(var(--hero-height) + var(--small-height) + 1rem);
+  overflow: hidden;
 }
 
 .hero-card {
   grid-area: hero;
 }
 
-.small-card:nth-child(2) {
+.small-card-1 {
   grid-area: small1;
 }
 
-.small-card:nth-child(3) {
+.small-card-2 {
   grid-area: small2;
 }
 
 .image-card {
   overflow: hidden;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  transform-style: preserve-3d;
-  perspective: 800px;
 }
 
 .image-card:hover {
@@ -143,23 +135,55 @@
   display: block;
 }
 
-/* Tablet: collapse to single column at 1024px */
 @media (max-width: 1024px) {
   .intro-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 50% 50%;
+  }
+
+  .intro-images-grid {
     grid-template-areas:
-      "text"
-      "images";
+      "hero hero"
+      "small1 small2";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: var(--hero-height) var(--small-height);
+    max-height: calc(var(--hero-height) + var(--small-height) + 1rem);
   }
 }
 
-/* Mobile: stack image grid rows at 768px */
 @media (max-width: 768px) {
+  .intro-container {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  .intro-text {
+    text-align: center;
+  }
+
+  .intro-text h3 {
+    font-size: 1.75rem;
+  }
+
+  .intro-text h4 {
+    font-size: 1.125rem;
+  }
+
+  .intro-text p {
+    font-size: 0.95rem;
+  }
+
+  .intro-benefits li {
+    justify-content: center;
+  }
+
+  .intro-button {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.2rem;
+  }
+
   .intro-images-grid {
-    grid-template-areas:
-      "hero"
-      "small1"
-      "small2";
-    grid-template-rows: auto auto auto;
+    visibility: hidden;
+    max-height: 0;
+    overflow: hidden;
   }
 }

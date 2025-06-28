@@ -1,21 +1,39 @@
-// src/pages/Incubation.tsx
-
+import React, { useRef } from 'react';
 import MainLayout from "../layouts/MainLayout";
-import IntroSection from "../features/Incubation/IntroSection"; // Make sure this exists
+import IntroSection from "../features/Incubation/IntroSection";
 import ApplySection from "../features/Incubation/ApplySection";
 import ExplorePrograms from "../features/Incubation/ExplorePrograms";
 import FAQsSection from "../features/landing/FAQsSection";
 import GetInTouchSection from "../features/landing/GetInTouchSection";
 
 const IncubationPage = () => {
+  const applyRef = useRef<HTMLElement | null>(null);
+
+  const handleScrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    section?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <MainLayout>
-      <IntroSection />
-      <ApplySection />
-      <ExplorePrograms />
-      <FAQsSection />
-      <GetInTouchSection/>
-
+      <section id="intro">
+        <IntroSection
+          applyRef={applyRef}
+          onScrollToSection={handleScrollToSection}
+        />
+      </section>
+      <section id="apply">
+        <ApplySection ref={applyRef as React.RefObject<HTMLElement>} />
+      </section>
+      <section id="explore">
+        <ExplorePrograms />
+      </section>
+      <section id="faqs">
+        <FAQsSection />
+      </section>
+      <section id="contact">
+        <GetInTouchSection />
+      </section>
     </MainLayout>
   );
 };

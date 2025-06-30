@@ -1,0 +1,106 @@
+/* src/features/MentorCycle/ExplorePrograms.css */
+
+.explore-section {
+  padding: 4rem 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+
+.explore-heading {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #111;
+}
+
+.explore-subheading {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.explore-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* ─── 3D CARD WITH HOVER LIFT ───────────────────────────────── */
+.explore-card {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  perspective: 800px;
+}
+.explore-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+/* ─────────────────────────────────────────────────────────────── */
+
+.explore-card-content {
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+.explore-card-content h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0a3161;
+  margin-bottom: 0.5rem;
+}
+
+.explore-card-content p {
+  font-size: 0.88rem;
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.explore-buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-primary {
+  background-color: #d62828;
+  color: white;
+  border: none;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: #0a3161;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.btn-link span {
+  margin-left: 4px;
+}
+
+.explore-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-top: auto;
+}

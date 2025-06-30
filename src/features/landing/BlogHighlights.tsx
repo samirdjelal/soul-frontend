@@ -20,7 +20,7 @@ const BlogHighlights = () => {
             </div>
             <h3 className="blog-headline">Building a Startup from Scratch</h3>
             <p className="blog-desc">Learn the essential steps to launch your own startup successfully.</p>
-            <a href="#" className="blog-link">Read more →</a>
+            <a href="/blogs/building-startup-from-scratch" className="blog-link">Read more →</a>
           </div>
 
           <div className="blog-card">
@@ -31,7 +31,7 @@ const BlogHighlights = () => {
             </div>
             <h3 className="blog-headline">The Future of Tech Startups</h3>
             <p className="blog-desc">Discover emerging trends shaping the technology startup landscape today.</p>
-            <a href="#" className="blog-link">Read more →</a>
+            <a href="/blogs/the-future-of-tech-startups" className="blog-link">Read more →</a>
           </div>
         </div>
       </div>

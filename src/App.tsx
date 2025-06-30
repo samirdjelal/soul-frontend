@@ -10,6 +10,8 @@ import AmeniJoinSoulIncubatorPage from "./pages/events/amenijoin-soul-incubator"
 import UAQFTZEventPage from "./pages/events/uaqftz-emerges-future-best-destination";
 import SoulFirstIncubatorOpensPage from "./pages/events/soul-first-incubator-opens";
 import SoulInauguratedUAQPage from "./pages/events/soul-inaugurated-as-uaq-new-hub";
+import BuildingStartupPage from "./pages/blogs/building-startup-from-scratch";
+import FutureTechStartupsPage from "./pages/blogs/the-future-of-tech-startups";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
         <Route path="/events/uaqftz-emerges-future-best-destination" element={<UAQFTZEventPage />} />
         <Route path="/events/soul-first-incubator-opens" element={<SoulFirstIncubatorOpensPage />} />
         <Route path="/events/soul-inaugurated-as-uaq-new-hub" element={<SoulInauguratedUAQPage />} />
+        <Route path="/blogs/building-startup-from-scratch" element={<BuildingStartupPage />} />
+        <Route path="/blogs/the-future-of-tech-startups" element={<FutureTechStartupsPage />} />
         {/* Add more routes as needed */}
       </Routes>
     </Router>

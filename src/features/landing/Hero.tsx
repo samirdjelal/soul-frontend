@@ -1,8 +1,14 @@
 // src/features/landing/Hero.tsx
-import React from "react";
-import "./Hero.css";
+import React, { useCallback } from 'react';
+import './Hero.css';
 
 const Hero = () => {
+  // helper to scroll smoothly to any section by ID
+  const scrollTo = useCallback((id: string) => {
+    const sec = document.getElementById(id);
+    if (sec) sec.scrollIntoView({ behavior: 'smooth' });
+  }, []);
+
   return (
     <section className="hero-section">
       <div className="container-wrapper">
@@ -30,8 +36,18 @@ const Hero = () => {
               from company formation to investor readiness and scalable growth.
             </p>
             <div className="hero-buttons">
-              <button className="btn-primary">Explore our services</button>
-              <button className="btn-primary">Explore our programs</button>
+              <button
+                className="btn-primary"
+                onClick={() => scrollTo('features')}
+              >
+                Explore our services
+              </button>
+              <button
+                className="btn-primary"
+                onClick={() => scrollTo('programs')}
+              >
+                Explore our programs
+              </button>
             </div>
           </div>
         </div>

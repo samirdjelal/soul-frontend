@@ -1,7 +1,7 @@
 Do this: 
 
 
-git clone https://github.com/sachindxb/soul-frontend.git
+git clone https://github.com/samirdjelal/soul-frontend.git
 cd soul-frontend
 
 npm install

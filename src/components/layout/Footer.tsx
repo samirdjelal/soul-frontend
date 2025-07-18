@@ -163,7 +163,7 @@ const Footer: React.FC = () => {
         <hr className="footer-divider" />
 
         <div className="footer-bottom">
-          <p>© 2025 Soul. All rights reserved.</p>
+          <p>© 2025 SOUL. All rights reserved.</p>
         </div>
       </div>
     </footer>

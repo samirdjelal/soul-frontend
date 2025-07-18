@@ -21,7 +21,7 @@ const stories = [
     name: 'Elina Costa, Maya Tanaka, Derya Kaplan',
     role: 'Founders, Klima',
     description:
-      "Klima delivers smart home energy solutions for a greener future. With Soul's mentorship, they reached MVP stage and gained investor interest.",
+      "Klima delivers smart home energy solutions for a greener future. With SOUL's mentorship, they reached MVP stage and gained investor interest.",
     image: '/home/success/elina.png',
   },
 ];

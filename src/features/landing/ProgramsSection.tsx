@@ -45,7 +45,7 @@ const programs = [
     // no route => scroll to contact
   },
   {
-    title: 'Incubation Program',
+    title: 'Team Lab',
     description:
       'Perfect for early-stage founders with an idea. We support you from concept to MVP with weekly mentorship, product validation, and strategic guidance.',
     action: 'Get started',

@@ -4,7 +4,7 @@ import './FAQsSection.css';
 
 const faqData = [
   {
-    question: 'Who is Soul for?',
+    question: 'Who is SOUL for?',
     answer: 'SOUL is designed for ambitious entrepreneurs, innovative creators, and visionary startups looking to grow in the UAE. Whether you’re a first-time founder, a tech innovator, or part of a creative community, SOUL provides the resources, support, and network to help you turn your ideas into successful businesses.',
   },
   {
@@ -12,8 +12,8 @@ const faqData = [
     answer: 'Absolutely! In fact, 60% of our founders come from international backgrounds. We fully support foreign entrepreneurs by managing 100% of the visa and residency processes, making it easy for you to establish your business and settle in without any hassle.',
   },
   {
-    question: 'What features does Soul offer?',
-    answer: 'Soul offers a comprehensive suite of services, including mentorship, access to investors, legal and regulatory support, co-working space, and more. Our programs are tailored to help startups at every stage of their journey.',
+    question: 'What features does SOUL offer?',
+    answer: 'SOUL offers a comprehensive suite of services, including mentorship, access to investors, legal and regulatory support, co-working space, and more. Our programs are tailored to help startups at every stage of their journey.',
   },
   {
     question: 'Do you invest directly in startups?',

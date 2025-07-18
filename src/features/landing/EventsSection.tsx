@@ -37,10 +37,10 @@ const EventsSection = () => {
     <section className="events-section">
       <div className="container-wrapper">
         <div className="events-header">
-          <h2>Events & Stories from the Soul Community</h2>
+          <h2>Events & Stories from the SOUL Community</h2>
           <p>
             From impactful events to inspiring founder stories — this is where
-            the Soul community comes to life.
+            the SOUL community comes to life.
           </p>
         </div>
         <div className="events-grid">

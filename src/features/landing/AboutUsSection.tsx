@@ -4,7 +4,7 @@ import './AboutUsSection.css';
 
 const aboutItems = [
   {
-    title: 'The Soul Story',
+    title: 'The SOUL Story',
     text: `SOUL (STARTUP ONE UAQ LAUNCHPAD) is more than just an incubator; we're a catalyst for innovation in Umm Al Quwain. It is a leading UAE-based global innovation hub leveraging low-cost, high-impact strategies that blend AI efficiency, grassroots community engagement, and strategic ecosystem partnerships.`,
     image: '/home/about/soul-story.png',
     reverse: false,

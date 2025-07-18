@@ -53,7 +53,7 @@ export default function Header() {
       <div className="header-container">
         <div className="logo">
           <Link to="/" onClick={() => setMenuOpen(false)}>
-            <img src="/soul-logo.png" alt="Soul UAQ Logo" />
+            <img src="/soul-logo.png" alt="SOUL UAQ Logo" />
           </Link>
         </div>
 

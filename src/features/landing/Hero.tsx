@@ -27,12 +27,12 @@ const Hero = () => {
 
           <div className="hero-text">
             <h1>
-              Every great startup has a Soul.
+              Every great startup has a SOUL.
               <br />
               We help you build yours
             </h1>
             <p>
-              At Soul Incubator, we provide early-stage entrepreneurs with comprehensive support —
+              At SOUL Incubator, we provide early-stage entrepreneurs with comprehensive support —
               from company formation to investor readiness and scalable growth.
             </p>
             <div className="hero-buttons">

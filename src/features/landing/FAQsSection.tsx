@@ -25,7 +25,7 @@ const faqData = [
   },
   {
     question: "What's included in the licensing package?",
-    answer: 'The license package is priced at AED 14,150 and includes a 1-year trade license, 4 visa quotas, and the option for up to 10 shareholder slots. It also covers 2 approved business activities of your choice, along with complimentary access to co-working spaces within our facility. This package offers a comprehensive solution for entrepreneurs looking to establish and grow their business with flexibility and added value.',
+    answer: 'The license package is priced at AED 14,150 and includes a 1-year trade license, 4 visa quotas, and the option for up to 10 shareholder slots. It also covers 5 approved business activities of your choice, along with complimentary access to co-working spaces within our facility. This package offers a comprehensive solution for entrepreneurs looking to establish and grow their business with flexibility and added value.',
   },
   {
     question: 'Do you provide office space?',

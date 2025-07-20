@@ -1,5 +1,6 @@
 // src/features/MentorCycle/ExplorePrograms.tsx
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./ExplorePrograms.css";
 
 const programs = [
@@ -10,6 +11,8 @@ const programs = [
     applyLabel: "Apply",
     learnLabel: "Learn",
     image: "/mentor/introsection/imgv1.png",
+    applyPath: "/acceleration",
+    learnPath: "/acceleration",
   },
   {
     title: "Incubation Program",
@@ -18,6 +21,8 @@ const programs = [
     applyLabel: "Apply",
     learnLabel: "Learn",
     image: "/mentor/introsection/imgv2.png",
+    applyPath: "/incubation",
+    learnPath: "/incubation",
   },
   {
     title: "Founder School",
@@ -26,10 +31,19 @@ const programs = [
     applyLabel: "Apply",
     learnLabel: "Learn",
     image: "/mentor/introsection/imgv3.png",
+    applyPath: "/founder-school",
+    learnPath: "/founder-school",
   },
 ];
 
 const ExplorePrograms: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleNavigation = (path: string) => {
+    navigate(path);
+    window.scrollTo(0, 0); // Scroll to top of the page after navigation
+  };
+  
   return (
     <section className="explore-section">
       <h3 className="explore-heading">Explore More Programs</h3>
@@ -44,8 +58,16 @@ const ExplorePrograms: React.FC = () => {
               <h4>{program.title}</h4>
               <p>{program.description}</p>
               <div className="explore-buttons">
-                <button className="btn-primary">{program.applyLabel}</button>
-                <button className="btn-link">
+                <button 
+                  className="btn-primary"
+                  onClick={() => handleNavigation(program.applyPath)}
+                >
+                  {program.applyLabel}
+                </button>
+                <button 
+                  className="btn-link"
+                  onClick={() => handleNavigation(program.learnPath)}
+                >
                   {program.learnLabel} <span>›</span>
                 </button>
               </div>

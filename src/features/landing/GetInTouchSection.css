@@ -117,6 +117,7 @@ textarea {
   font-size: 1rem;
   transition: all 0.3s ease;
   background: #fff;
+  color: #000 !important;
 }
 
 input:focus,
@@ -139,10 +140,17 @@ textarea {
   margin: 1.5rem 0;
 }
 
+.checkbox-field label {
+  color: #000 !important;
+}
+
 .checkbox-field input[type="checkbox"] {
   width: 20px;
-  height: 20px;
+  height: 17px;
   margin-right: 0.5rem;
+  accent-color: #fff;
+  fill: #fff;
+  background: #ca1414;
 }
 
 .submit-button {

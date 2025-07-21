@@ -56,6 +56,7 @@
   font-size: 1.5rem;
   cursor: pointer;
   padding: 0.5rem;
+  color: #1f2937 !important; /* Force dark color for the hamburger icon */
 }
 
 @media (max-width: 768px) {

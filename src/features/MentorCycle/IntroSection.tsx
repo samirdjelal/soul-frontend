@@ -47,9 +47,7 @@ const IntroSection: React.FC<IntroSectionProps> = ({
             <h3>Mentorship Circle</h3>
             <h4>Real Talk. Real Connections.</h4>
             <p>
-              Being a founder often means navigating tough decisions, uncertain
-              paths, and moments of doubt — and doing it all alone. But with
-              Mentorship Circle, you don't have to.
+              A curated community of experienced founders, investors, and domain experts committed to mentoring early-stage startups. This circle is for mentors passionate about giving back, guiding the next generation of entrepreneurs, and collaborating on high-impact innovation. Mentors can choose startups they resonate with, set their own terms (equity or paid), and become part of the region's most dynamic startup ecosystem.
             </p>
             <p>
               This program is built to foster meaningful connections with

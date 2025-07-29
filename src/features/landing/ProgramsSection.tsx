@@ -23,7 +23,7 @@ const programs = [
   {
     title: 'Mentorship Circles',
     description:
-      'Designed for startups ready to scale. This program includes pitch coaching, growth strategy sessions, and direct introductions to investors.',
+      "A curated community of experienced founders, investors, and domain experts committed to mentoring early-stage startups.",
     action: 'Join now',
     image: '/home/programs/mentorship.png',
     route: '/mentor-circle',
